@@ -218,11 +218,10 @@ def log_in(driver, timeout=10):
     password_el.send_keys(Keys.RETURN)
 
 
-def keep_scroling(driver, data, writer, tweet_ids, scrolling, tweet_parsed, limit, scroll, last_position, save_images = False):
+def keep_scroling(driver, data, writer, tweet_ids, scrolling, tweet_parsed, limit, scroll, last_position, save_dir="outputs", save_images = False):
     """ scrolling function for tweets crawling"""
 
-    save_images_dir = "/images"
-
+    save_images_dir = os.path.join(save_dir, "images")
     if save_images == True:
     	if not os.path.exists(save_images_dir):
     		os.mkdir(save_images_dir)

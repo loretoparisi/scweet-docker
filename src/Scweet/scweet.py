@@ -110,7 +110,7 @@ def scrap(start_date, max_date, words=None, to_account=None, from_account=None, 
             sleep(random.uniform(0.5, 1.5))
             # start scrolling and get tweets
             driver, data, writer, tweet_ids, scrolling, tweet_parsed, scroll, last_position = \
-                keep_scroling(driver, data, writer, tweet_ids, scrolling, tweet_parsed, limit, scroll, last_position)
+                keep_scroling(driver, data, writer, tweet_ids, scrolling, tweet_parsed, limit, scroll, last_position, save_dir)
 
             # keep updating <start date> and <end date> for every search
             if type(start_date) == str:
@@ -127,11 +127,11 @@ def scrap(start_date, max_date, words=None, to_account=None, from_account=None, 
 
     # save images
     if save_images==True:
-        print("Saving images ...")
-        save_images_dir = "images"
+        save_images_dir = os.path.join(save_dir, "images")
         if not os.path.exists(save_images_dir):
             os.makedirs(save_images_dir)
 
+        print("Saving images to %s" % save_images_dir)
         dowload_images(data["Image link"], save_images_dir)
 
     # close the web driver
