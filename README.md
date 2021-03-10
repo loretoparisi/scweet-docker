@@ -1,5 +1,5 @@
 # scweet-docker
-Docker image and `Dockerfile` for (Scweet)[https://github.com/Altimis/Scweet]. Code modified and adapted from source repository to make it working in `Docker`.
+Docker image and `Dockerfile` for [Scweet](https://github.com/Altimis/Scweet). Code modified and adapted from source repository to make it working in `Docker`.
 
 ## A simple and unlimited twitter scraper with python and without authentification. 
 
